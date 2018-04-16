@@ -13,7 +13,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ways = 0;
     MatrixView = NULL;
     ui->setupUi(this);
-
     ui->label_2->setHidden(true);
     ui->label_3->setHidden(true);
     ui->label_4->setHidden(true);
@@ -29,6 +28,19 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+/* Метод, в котором происходит рисование
+ * */
+void MainWindow::paintEvent(QPaintEvent *event)
+{
+//    Q_UNUSED(event);
+//    QPainter painter(ui->graphicsView); // Создаём объект отрисовщика
+//    // Устанавливаем кисть абриса
+//    painter.setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::FlatCap));
+
+//    painter.setBrush(QBrush(Qt::red, Qt::SolidPattern));
+//    painter.drawEllipse(30, 10, 150, 150);
+}
 
 void MainWindow::on_makeButton_clicked()
 {
@@ -305,11 +317,11 @@ void MainWindow::setColor(int num)
     for(QVector <int>::iterator it = col.begin(); it != col.end(); it++)
     {
         int sector = *it;
-        int row = sector / ui->graph->rowCount();
-        int column = sector - (row * ui->graph->columnCount());
-        QTableWidgetItem *temp = ui->graph->takeItem(row, column);
-        temp->setBackgroundColor(QColor(50, 150, 50));
-        ui->graph->setItem(row, column, temp);
+//        int row = sector / ui->graph->rowCount();
+//        int column = sector - (row * ui->graph->columnCount());
+//        QTableWidgetItem *temp = ui->graph->takeItem(row, column);
+//        temp->setBackgroundColor(QColor(50, 150, 50));
+//        ui->graph->setItem(row, column, temp);
     }
 }
 
@@ -335,29 +347,6 @@ void MainWindow::on_makeTable_clicked()
 {
     col.clear();
     on_showDeWay_clicked();
-    if((!Steps) || (ui->xSpin->value() * ui->ySpin->value() > rowNumb))
-    {
-        return;
-    }
-    ui->graph->setColumnCount(ui->xSpin->value());
-    ui->graph->setRowCount(ui->ySpin->value());
-    for(int i = 0; i < ui->ySpin->value(); i++)
-    {
-        for(int j = 0; j < ui->xSpin->value(); j++)
-        {
-            ui->graph->setItem(i, j, new QTableWidgetItem(QString::number(Steps[i*ui->xSpin->value() + j])));
-        }
-    }
-    for(int i = 0; i < ui->xSpin->value(); i++)
-    {
-        ui->graph->setColumnWidth(i, (ui->graph->width() - ui->graph->verticalHeader()->width()) / (ui->xSpin->value() + 0.5));
-    }
-
-    for(int i = 0; i < ui->ySpin->value(); i++)
-    {
-        ui->graph->setRowHeight(i, (ui->graph->height() - ui->graph->horizontalHeader()->height()) / (ui->ySpin->value() + 0.5));
-    }
-
     if(Steps[target] != -1)
     {
         col.push_back(target);
@@ -366,11 +355,11 @@ void MainWindow::on_makeTable_clicked()
     }
     else
     {
-        int row = target / ui->graph->rowCount();
-        int column = target - (row * ui->graph->columnCount());
-        QTableWidgetItem *temp = ui->graph->takeItem(row, column);
-        temp->setBackgroundColor(QColor(50, 150, 50));
-        ui->graph->setItem(row, column, temp);
+//        int row = target / ui->graph->rowCount();
+//        int column = target - (row * ui->graph->columnCount());
+//        QTableWidgetItem *temp = ui->graph->takeItem(row, column);
+//        temp->setBackgroundColor(QColor(50, 150, 50));
+//        ui->graph->setItem(row, column, temp);
     }
 }
 
@@ -457,4 +446,6 @@ void MainWindow::on_MatrixCreate_clicked()
     MatrixView->setGeometry(10, 125, 271, 221);
     MatrixView->setText(res);
     MatrixView->show();
+    scene = new Paint(ui->Graphics);
+    scene->show();
 }

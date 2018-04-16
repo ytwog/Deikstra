@@ -7,6 +7,8 @@
 #include <QTextBrowser>
 #include <QPair>
 #include <QFileDialog>
+#include <paint.h>
+
 
 namespace Ui {
 class MainWindow;
@@ -28,6 +30,9 @@ public:
     void setColor(int num);
 
     explicit MainWindow(QWidget *parent = 0);
+
+    void paintEvent(QPaintEvent *event);
+
     ~MainWindow();
 
 private slots:
@@ -60,6 +65,7 @@ private:
     int rowNumb;
     QTextBrowser *MatrixView;
     Ui::MainWindow *ui;
+    QWidget *scene;
 };
 
 #endif // MAINWINDOW_H

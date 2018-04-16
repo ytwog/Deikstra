@@ -6,35 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>675</width>
-    <height>429</height>
+    <width>679</width>
+    <height>423</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="getButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>131</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Получить из файла
-матрицу смежности</string>
-    </property>
-   </widget>
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
       <x>283</x>
       <y>10</y>
       <width>20</width>
-      <height>291</height>
+      <height>341</height>
      </rect>
     </property>
     <property name="orientation">
@@ -44,52 +30,53 @@
    <widget class="QPushButton" name="makeButton">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>20</x>
       <y>20</y>
-      <width>131</width>
+      <width>111</width>
       <height>61</height>
      </rect>
     </property>
     <property name="text">
      <string>Составить
-матрицу смежности</string>
+матрицу</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../build-Deikstra-Desktop_Qt_5_0_2_MinGW_32bit-Debug/102New.ICO</normaloff>../build-Deikstra-Desktop_Qt_5_0_2_MinGW_32bit-Debug/102New.ICO</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="showDeWay">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>250</y>
-      <width>131</width>
-      <height>51</height>
+      <x>580</x>
+      <y>260</y>
+      <width>91</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Найти кратчайший
-путь</string>
+     <string>Старт</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../build-Deikstra-Desktop_Qt_5_0_2_MinGW_32bit-Debug/102157.ICO</normaloff>../build-Deikstra-Desktop_Qt_5_0_2_MinGW_32bit-Debug/102157.ICO</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="exitButton">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>250</y>
-      <width>71</width>
-      <height>101</height>
+      <x>580</x>
+      <y>310</y>
+      <width>91</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Выход</string>
     </property>
-   </widget>
-   <widget class="QTableWidget" name="graph">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>10</y>
-      <width>351</width>
-      <height>221</height>
-     </rect>
+    <property name="icon">
+     <iconset>
+      <normaloff>../build-Deikstra-Desktop_Qt_5_0_2_MinGW_32bit-Debug/Channel Screen Saver0.ico</normaloff>../build-Deikstra-Desktop_Qt_5_0_2_MinGW_32bit-Debug/Channel Screen Saver0.ico</iconset>
     </property>
    </widget>
    <widget class="QLabel" name="error">
@@ -108,47 +95,18 @@
    <widget class="QPushButton" name="makeTable">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>250</y>
-      <width>131</width>
-      <height>71</height>
+      <x>310</x>
+      <y>260</y>
+      <width>161</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Создать таблицу</string>
+     <string>Добавить вершины</string>
     </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>330</y>
-      <width>21</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>X</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="xSpin">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>330</y>
-      <width>42</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="ySpin">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>330</y>
-      <width>42</width>
-      <height>22</height>
-     </rect>
+    <property name="icon">
+     <iconset>
+      <normaloff>../build-Deikstra-Desktop_Qt_5_0_2_MinGW_32bit-Debug/102Point.ico</normaloff>../build-Deikstra-Desktop_Qt_5_0_2_MinGW_32bit-Debug/102Point.ico</iconset>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -243,13 +201,54 @@
      </rect>
     </property>
    </widget>
+   <widget class="QWidget" name="Graphics" native="true">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>10</y>
+      <width>351</width>
+      <height>231</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="makeTable_2">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>310</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Добавить ребра    </string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../build-Deikstra-Desktop_Qt_5_0_2_MinGW_32bit-Debug/102Line.ICO</normaloff>../build-Deikstra-Desktop_Qt_5_0_2_MinGW_32bit-Debug/102Line.ICO</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="getButton">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>20</y>
+      <width>131</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Получить из файла
+матрицу смежности</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>675</width>
+     <width>679</width>
      <height>26</height>
     </rect>
    </property>
